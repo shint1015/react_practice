@@ -7,7 +7,8 @@ const App = () => {
     const profiles = [
         {name: "Taro", age: 10},
         {name: "Hanako", age: 5},
-        {name: "Noname"},
+        {name: "Noname", age:3},
+        // {name: 1},//errorが起こる
     ]
   return (
       <div>
@@ -23,7 +24,10 @@ const App = () => {
 const User = (props) => {
     return <div>Hi, I am {props.name}, and {props.age} years old!</div>
 }
+//propの定義
 User.propTypes = {
-    name: PropTypes.string
+    name: PropTypes.string,
+    //数字で必須である場合
+    age: PropTypes.number.isRequired
 }
 export default App
